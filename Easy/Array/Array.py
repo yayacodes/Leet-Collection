@@ -1,3 +1,7 @@
+from ast import List
+import collections
+
+
 class Array(object):
         
     #Remove Duplicates From Sorted Array
@@ -92,6 +96,22 @@ class Array(object):
         for key in map:
             if map[key] == 1:
                 return key
+
+    #Intersection of Two Arrays II
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        if not nums1 or not nums2:
+            return []
+
+        map1 = collections.Counter(nums1)
+
+        result = []
+
+        for num in nums2:
+            if num in map1 and map1[num]:
+                result.append(num)
+                map1[num] -= 1
+    
+        return result
     
 
 

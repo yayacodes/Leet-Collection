@@ -1,5 +1,6 @@
 package Easy.Array;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -97,6 +98,29 @@ public class Array {
                 return entry.getKey();
         }
         return -1;
+    }
+
+    // Intersection of Two Arrays II
+    public int[] intersect(int[] nums1, int[] nums2) {
+        if (nums1.length > nums2.length)
+            return intersect(nums2, nums1);
+
+        HashMap<Integer, Integer> m = new HashMap<Integer, Integer>();
+
+        for (int x : nums1) {
+            m.put(x, m.getOrDefault(x, 0) + 1);
+        }
+
+        int k = 0;
+
+        for (int y : nums2) {
+            int count = m.getOrDefault(y, 0);
+            if (count > 0) {
+                nums1[k++] = y;
+                m.put(y, count - 1);
+            }
+        }
+        return Arrays.copyOfRange(nums1, 0, k);
     }
 
 }
