@@ -60,6 +60,38 @@ class Array(object):
             start += 1
             end -= 1
 
+    #Contains Duplicate
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        unique = set()
+        
+        for i in nums:
+            if i in unique:
+                return True
+            else:
+                unique.add(i)
+        return False
+    
+    #Single Number
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        map = {}
+        
+        for n in nums:
+            if n not in map:
+                map[n] = 1
+            else:
+                map[n] += 1
+                
+        for key in map:
+            if map[key] == 1:
+                return key
     
 
 

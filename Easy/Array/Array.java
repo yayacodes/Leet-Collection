@@ -1,5 +1,10 @@
 package Easy.Array;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 public class Array {
 
     public Array() {
@@ -64,6 +69,34 @@ public class Array {
             start++;
             end--;
         }
+    }
+
+    // Contains Duplicate
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+
+        for (int n : nums) {
+            if (set.contains(n))
+                return true;
+            else
+                set.add(n);
+        }
+        return false;
+    }
+
+    // Single Number
+    public int singleNumber(int[] nums) {
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+        for (int n : nums) {
+            map.put(n, map.getOrDefault(n, 0) + 1);
+        }
+
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() == 1)
+                return entry.getKey();
+        }
+        return -1;
     }
 
 }
