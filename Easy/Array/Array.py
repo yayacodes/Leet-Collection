@@ -113,6 +113,23 @@ class Array(object):
     
         return result
     
+    # Move Zeroes
+    def moveZeroes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
+        j = 0
+        
+        for n in nums:
+            if n != 0:
+                nums[j] = n
+                j+=1
+                
+        while j < len(nums):
+            nums[j] = 0
+            j+=1
+    
 
 
     
