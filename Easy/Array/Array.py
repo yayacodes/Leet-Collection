@@ -147,8 +147,6 @@ class Array(object):
             digits[n] = digits[n] + 1
         return digits
             
-
-
     
 if __name__ == '__main__':
     ar = Array()
