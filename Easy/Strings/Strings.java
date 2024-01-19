@@ -12,6 +12,7 @@ public class Strings {
         a.reverseString(x.toCharArray());
     }
 
+    // Reverse String
     public void reverseString(char[] s) {
         int i = 0;
         int j = s.length - 1;
@@ -24,5 +25,22 @@ public class Strings {
             i++;
             j--;
         }
+    }
+
+    // First Unique Character in String
+    public int firstUniqChar(String s) {
+        int[] count = new int[26];
+
+        for (char c : s.toCharArray()) {
+            count[c - 'a']++;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            if (count[s.charAt(i) - 'a'] == 1) {
+                return i;
+            }
+        }
+
+        return -1;
     }
 }
