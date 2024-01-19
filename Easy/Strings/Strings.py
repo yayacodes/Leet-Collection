@@ -23,4 +23,4 @@ class Strings(object):
 
 
 if __name__ == '__main__':
-      print("Strings Class")
+    print("Strings Class")

@@ -10,7 +10,6 @@ public class Strings {
 
         String x = "Hello world";
         a.reverseString(x.toCharArray());
-        int g = 0;
     }
 
     public void reverseString(char[] s) {
