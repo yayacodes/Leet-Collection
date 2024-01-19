@@ -1,0 +1,26 @@
+class Strings(object):
+
+
+    def reverseString(self, s):
+            """
+            :type s: List[str]
+            :rtype: None Do not return anything, modify s in-place instead.
+            """
+    #         i = 0
+    #         j = len(s) - 1
+            
+    #         while i < j:
+    #             temp = s[i]
+    #             s[i] = s[j]
+    #             s[j] = temp
+    #             i+=1
+    #             j-=1
+            
+            rev_string = s.reverse()
+
+
+
+
+
+if __name__ == '__main__':
+      print("Strings Class")
